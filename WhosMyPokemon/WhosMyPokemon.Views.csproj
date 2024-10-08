@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Ash.png" />
+    <None Remove="Images\Brock.png" />
+    <None Remove="Images\Geodude.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\Misty.png" />
+    <None Remove="Images\Pikachu.png" />
+    <None Remove="Images\Togepi.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WhosMyPokemon.Models\WhosMyPokemon.Models.csproj" />
+    <ProjectReference Include="..\WhosMyPokemon.ViewModels\WhosMyPokemon.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Ash.png" />
+    <Resource Include="Images\Brock.png" />
+    <Resource Include="Images\Geodude.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\Misty.png" />
+    <Resource Include="Images\Pikachu.png" />
+    <Resource Include="Images\Togepi.png" />
+  </ItemGroup>
+
+</Project>

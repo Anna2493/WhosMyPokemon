@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="WhosMyPokemon.Views.MakeMatchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WhosMyPokemon.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="150">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisible" />
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0 30 0 0"/>
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Content="Match"
+            Command="{Binding MakeMatch}" Height="35" Width="80" Margin="0 20 0 0" 
+                Foreground="White" Background="Navy"/>
+
+        <TextBlock Text="{Binding Path=MatchIsCorrectMessage}"
+               Visibility="{Binding MatchIsCorrect, Converter={StaticResource BoolToVisible}}"
+                   Grid.Row="1"/>
+
+        <TextBlock Text="{Binding Path=MatchIsIncorrectMessage}"
+               Visibility="{Binding MatchIsIncorrect, Converter={StaticResource BoolToVisible}}"
+                   Grid.Row="1"/>
+
+        <TextBlock Text="{Binding Path=MissingSelectionMessage}"
+               Visibility="{Binding MissingSelection, Converter={StaticResource BoolToVisible}}"
+                   Grid.Row="1"/>
+
+
+    </Grid>
+</UserControl>
